@@ -19,13 +19,13 @@ public class Reservation {
     @JoinColumn(name = "space_id")
     private Space space;
     private LocalDateTime startDate;
-    private LocalDate endDate;
+    private LocalDateTime endDate;
     private Status status;
 
     public Reservation() {
     }
 
-    public Reservation(Integer id, User user, Space space, LocalDateTime startDate, LocalDate endDate, Status status) {
+    public Reservation(Integer id, User user, Space space, LocalDateTime startDate, LocalDateTime endDate, Status status) {
         this.id = id;
         this.user = user;
         this.space = space;
@@ -66,19 +66,19 @@ public class Reservation {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
     public Status getStatus() {
         return status;
     }
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
     }
 }
