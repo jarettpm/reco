@@ -22,4 +22,13 @@ public class ReservationController {
     public ResponseEntity<Reservation> add(@RequestBody ReservationDTO reservationDTO) {
         return ResponseEntity.ok(reservationService.add(reservationDTO));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        Reservation deleted = reservationService.delete(id);
+        if (deleted == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok("Reserva eliminada exitosamente");
+    }
 }

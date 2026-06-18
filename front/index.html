@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coworking — Gestión de Reservas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <h1 class="header__title">Coworking Space</h1>
+      <p class="header__subtitle">Gestión de reservas</p>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="feedback" id="feedback" aria-live="polite"></section>
+
+    <section class="form-section">
+      <h2 class="section__title">Nueva reserva</h2>
+      <form class="form" id="booking-form">
+        <div class="form__group">
+          <label class="form__label" for="space-id">ID del espacio (numérico)</label>
+          <input class="form__input" type="number" id="space-id" name="spaceId" required placeholder="Ej: 1" min="1">
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="start-date">Fecha de inicio</label>
+          <input class="form__input" type="date" id="start-date" name="startDate" required>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="end-date">Fecha de fin</label>
+          <input class="form__input" type="date" id="end-date" name="endDate" required>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="user-email">Correo electrónico</label>
+          <input class="form__input" type="email" id="user-email" name="userEmail" required placeholder="usuario@ejemplo.com">
+        </div>
+
+        <button class="form__submit" type="submit">Crear reserva</button>
+      </form>
+    </section>
+
+    <section class="bookings-section">
+      <h2 class="section__title">Reservas existentes</h2>
+      <div class="table-wrapper">
+        <table class="table" id="bookings-table">
+          <thead>
+            <tr>
+              <th>ID Espacio</th>
+              <th>Inicio</th>
+              <th>Fin</th>
+              <th>Usuario</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body"></tbody>
+        </table>
+      </div>
+      <p class="bookings-empty" id="bookings-empty">No hay reservas registradas.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; 2026 Coworking Space — Demo</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
